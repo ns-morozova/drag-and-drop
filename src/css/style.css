@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.cards {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.cards-container {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    background-color: #117abb;
+    padding: 10px;
+}
+
+.card {
+    background-color: #dee2e5;
+    padding: 10px;
+    border-radius: 5px;
+    height: fit-content;
+    min-width: 255px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.card-title {
+    font-weight: bold;
+    line-height: 22px;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+}
+
+.tasks {
+    list-style-type: none;
+    text-align: start;
+    padding-left: 0;
+}
+
+.task {
+    max-width: 240px;
+    min-width: 240px;
+    margin-bottom: 10px;
+    padding: 7px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.task._drag {
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  cursor: grabbing;
+}
+
+.task._ghost {
+  background: #dddddd !important;
+  box-shadow: none !important;
+  color: #dddddd !important;
+  pointer-events: none !important;
+}
+
+.task:hover {
+    cursor: pointer;
+}
+
+.task-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.task-name {
+    font-size: 14px;
+}
+
+.task-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.task-icon {
+    display: flex;
+}
+
+.task-add-new {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.task-add {
+    display: flex;
+    gap: 5px;
+}
+
+.task-add-title {
+    text-decoration: none;
+    font-size: 14px;
+    color: #4d4d4d;
+}
+
+.task-add-title:hover {
+    text-decoration: underline;
+}
+
+.task-descr {
+    max-width: 240px;
+    max-height: 200px;
+    min-width: 240px;
+    margin-bottom: 10px;
+    padding: 7px;
+    background-color: white;
+    border-radius: 3px;
+    border: none;
+    font-family: Arial, sans-serif;
+    margin-bottom: 3px;
+}
+
+.task-add {
+    display: block;
+}
+
+.task-add-form {
+    display: flex;
+    gap: 10px;
+}
+
+.task-add-btn {
+    background-color: #5ea74d;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 90px;
+}
+
+.task-add-btn:hover {
+    background-color: #38692c;
+}
+
+.hidden {
+    display: none;  
+}
+
+.templ {
+    display: none;
+}
+
+
+

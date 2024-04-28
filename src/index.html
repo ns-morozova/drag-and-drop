@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li class="task templ">
+        <div class="task-info">
+            <span class="task-name">Welcome to Trello!</span>
+            <img class="icon-close hidden" src="/src/svg/close.svg" width="20" height="20" alt="close">
+        </div>
+    </li>
+
+    <article class="cards">
+        <div class="cards-container">
+            <div class="card" id="to-do">
+                <div class="card-header">
+                    <span class="card-title">TODO</span>
+                    <img class="menu-icon" src="/src/svg/more-alt.svg" width="20" height="20" alt="more-alt">
+                </div>
+                <ul class="tasks">
+                    
+                    <!-- <li class="task">
+                        <div class="task-info">
+                            <span class="task-name">Welcome to Trello!</span>
+                            <img class="icon-close hidden" src="/src/svg/close.svg" width="20" height="20" alt="close">
+                        </div>
+                    </li>
+            
+                    <li class="task">
+                        <div class="task-info">
+                            <span class="task-name">This is card.</span>
+                            <img class="icon-close hidden" src="/src/svg/close.svg" width="20" height="20" alt="close">
+                        </div>
+                    </li> -->
+
+                </ul>
+
+                <div class="task-add-new">
+                    <img class="" src="/src/svg/math-plus.svg" width="20" height="20" alt="math-plus">
+                    <a class="task-add-title" href="">Add another task</a>
+                </div>
+                
+                <div class="task-add hidden">
+                    <textarea type="text" class="task-descr" name="name" required minlength="4"
+                        placeholder="Enter a title for this card..."></textarea>
+                    <div class="task-add-form">
+                        <button class="task-add-btn">Add Card</button>
+                        <img class="close-new-task" src="/src/svg/close.svg" width="20" height="20" alt="close">
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="card" id="in-progress">
+                <div class="card-header">
+                    <span class="card-title">IN PROGRESS</span>
+                    <img class="menu-icon" src="/src/svg/more-alt.svg" width="20" height="20" alt="more-alt">
+                </div>
+                <ul class="tasks">
+
+                </ul>
+
+                <div class="task-add-new">
+                    <img class="" src="/src/svg/math-plus.svg" width="20" height="20" alt="math-plus">
+                    <a class="task-add-title" href="">Add another task</a>
+                </div>
+                
+                <div class="task-add hidden">
+                    <textarea type="text" class="task-descr" name="name" required minlength="4"
+                        placeholder="Enter a title for this card..."></textarea>
+                    <div class="task-add-form">
+                        <button class="task-add-btn">Add Card</button>
+                        <img class="close-new-task" src="/src/svg/close.svg" width="20" height="20" alt="close">
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="card" id="done">
+                <div class="card-header">
+                    <span class="card-title">DONE</span>
+                    <img class="menu-icon" src="/src/svg/more-alt.svg" width="20" height="20" alt="more-alt">
+                </div>
+                <ul class="tasks">
+
+                </ul>
+
+                <div class="task-add-new">
+                    <img class="" src="/src/svg/math-plus.svg" width="20" height="20" alt="math-plus">
+                    <a class="task-add-title" href="">Add another task</a>
+                </div>
+
+                <div class="task-add hidden">
+                    <textarea type="text" class="task-descr" name="name" required minlength="4"
+                        placeholder="Enter a title for this card..."></textarea>
+                    <div class="task-add-form">
+                        <button class="task-add-btn">Add Card</button>
+                        <img class="close-new-task" src="/src/svg/close.svg" width="20" height="20" alt="close">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+</body>
+</html>
