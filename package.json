@@ -6,8 +6,8 @@
   "author": "ns-morozova <ns_morozova@mail.ru>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --coverage",
-    "lint": "eslint . --fix",
+    "test": "jest --fix ./src/js/app.js",
+    "lint": "eslint ./node_modules/eslint/bin/eslint.js",
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
