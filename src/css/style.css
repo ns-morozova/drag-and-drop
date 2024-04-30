@@ -2,6 +2,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
+body._grabbing {
+  cursor: grabbing !important;
+}
+
+body._grabbing * {
+  cursor: grabbing !important;
+}
+
 
 .cards {
     width: auto;
@@ -56,26 +64,24 @@ body {
     padding: 7px;
     background-color: white;
     border-radius: 3px;
-}
-
-.task._drag {
-  position: absolute;
-  z-index: 999;
-  pointer-events: none;
-  cursor: grabbing;
-}
-
-.task._ghost {
-  background: #dddddd !important;
-  box-shadow: none !important;
-  color: #dddddd !important;
-  pointer-events: none !important;
-}
-
-.task:hover {
+    list-style-type: none;
     cursor: pointer;
 }
 
+.task._ghost {
+  background: #dddddd;
+  box-shadow: none;
+  color: #dddddd;
+  pointer-events: none;
+}
+
+.task._drag {
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    cursor: grabbing;
+  }
+  
 .task-info {
     display: flex;
     flex-wrap: wrap;
@@ -161,6 +167,3 @@ body {
 .templ {
     display: none;
 }
-
-
-

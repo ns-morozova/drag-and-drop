@@ -12,13 +12,11 @@ export default class Controller {
         this.onMouseDown = this.onMouseDown.bind(this);
         const cardsDom = document.querySelector('.cards');
         cardsDom.addEventListener('taskmousedown', this.onMouseDown);
-        this.onMouseUp = this.onMouseUp.bind(this);
-        document.addEventListener('mouseup', this.onMouseUp);
-        this.onMouseMove = this.onMouseMove.bind(this);
-        document.addEventListener('mousemove', this.onMouseMove);
+        document.addEventListener('mouseup', this.onMouseUp.bind(this));
+        document.addEventListener('mousemove', this.onMouseMove.bind(this));
         for (let cardObj of this.cards) {
             cardObj.card.addEventListener('mouseover', this.onMouseOver.bind(this));
-            cardObj.card.addEventListener('mouseout', this.onMouseOut.bind(this));
+            //cardObj.card.addEventListener('mouseout', this.onMouseOut.bind(this));
         }
 
     }
@@ -48,19 +46,16 @@ export default class Controller {
         if (!this.copy) {
             return;
         }
+
         const ul = event.currentTarget.querySelector('.tasks');
         if (event.target.closest('.card-header')) {
-
+            ul.prepend(this.task);
+            return;
         }
-
-        const li = event.currentTarget.closest('.task');
-        if (!li) {
+        if (event.target.closest('.task-add-new')) {
             ul.append(this.task);
+            return;
         }
-        else {
-            ul.before(li);
-        }
-
 
     }
 
@@ -77,6 +72,7 @@ export default class Controller {
         event.preventDefault();
         this.task = event.detail.target;
         this.copy = this.task.cloneNode(true);
+        document.body.classList.add('_grabbing');
         this.task.classList.add('_ghost');
         this.copy.classList.add('_drag');
         document.body.append(this.copy);
@@ -93,8 +89,9 @@ export default class Controller {
             this.copy.remove();
             this.copy = null;
             this.task.classList.remove('_ghost');
+            AppState.saveState();
+            document.body.classList.remove('_grabbing');
         }
-
     }
 
     onMouseMove(event) {
@@ -103,6 +100,19 @@ export default class Controller {
             return;
         }
         this.moveAt(event.pageX, event.pageY);
+
+        const li = event.target.closest('.task');
+        if (li) {
+            const coordsMovedCard = li.getBoundingClientRect();
+            const coordsAboutCenter = event.pageY - (coordsMovedCard.bottom - coordsMovedCard.height / 2);
+            if (coordsAboutCenter < 0) {
+                li.insertAdjacentElement('beforeBegin', this.task);
+            }
+            if (coordsAboutCenter > 0) {
+                li.insertAdjacentElement('afterEnd', this.task);
+            }
+        }
+
 
     }
 

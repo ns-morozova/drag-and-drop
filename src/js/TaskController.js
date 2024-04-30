@@ -31,6 +31,9 @@ export default class TaskController {
 
     onMouseDown(event) {
         event.preventDefault();
+        if(event.target.classList.contains('icon-close')) {
+            return;
+        }
         this.task.dispatchEvent(new CustomEvent("taskmousedown", { 'bubbles': true, 'cancelable': true,'detail': {'clientX': event.clientX, 'clientY': event.clientY, 'target': event.currentTarget, 'pageX': event.pageX, 'pageY': event.pageY}}));
     }
 }
